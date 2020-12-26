@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generador HTML</title>
+    <link rel="stylesheet" type="text/css" href="css/generadorHTML.css">
+    <script src="generadorHTML.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <article>
+    <header>
+        <h1>< Generador HTML/></h1>
+        <h4>Crea tu vista de forma visual y genera el código</h4>
+    </header>
+
+    <main>
+        <div id="camposFieldset">
+            <fieldset>
+            <legend> Titulo </legend>
+                <input type="text" id="cabecera" onkeyup="validarCabecera()"/>
+                <select type="multiple" id="nivelCabecera" disabled="disabled">
+                    <option>H1</option>
+                    <option>H2</option>
+                    <option>H3</option>
+                </select>
+                <input type="button" id="boton" value="Añadir" onclick="AnadirCabecera()" disabled="disabled"/>
+                </fieldset>
+
+            <fieldset>
+                <legend>Caja de Texto</legend>
+                <input type="text" id="Texto" onkeyup="validarCajaTexto()"/>
+                <input type="button" value="Añadir" id="botonTexto" onclick="AnadirTexto()" disabled="disabled"/>
+            </fieldset>
+
+
+
+            <fieldset>
+                <legend>Selector de Opciones</legend>
+                <input type="radio" name="seleccion" value="radio"  onclick="tipoOpciones()"/> Radio Button &nbsp; &nbsp;
+                    
+                Nombre del Desplegable  <input type="text" name="nombre" disabled onkeyup="nombreOpciones()" disabled/>
+                <br>
+                <input type="radio" name="seleccion" value="checkbox" onclick="tipoOpciones()"/> 
+                <label for="male">Checkbox</label>
+                <br>
+                <input type="radio" name="seleccion" value="select" onclick="tipoOpciones()"/> Desplegable
+                <br><br>
+                Numero de Opciones <input type="text" name="numeroOpciones" style="width: 20px;"  onkeyup="keyUpNumeroOpciones()" disabled/>
+                <br>
+                <div></div>
+                <input type="button" id="idInput" value="Añadir" onclick="RellenarDivOpciones()" disabled/>
+            </fieldset>
+        
+
+
+        <fieldset>
+        <legend>Botón</legend>
+            <input type="radio" name="seleccion2" id="seleccion1" value="Button" onchange="validarCajaBotones()"/> Button &nbsp; &nbsp;
+            Texto <input type="text" name="valor" id="CajaBotones" disabled="disabled" onkeyup="validarBotonDeBotones()"/>
+            <br>
+            <input type="radio" name="seleccion2" id="seleccion2" value="Reset" onchange="validarCajaBotones()"/> Reset
+            <br>
+            <input type="radio" name="seleccion2" id="seleccion3" value="Submit" onchange="validarCajaBotones()"/> Submit
+            <br>
+            <input type="button" value="Añadir" id="BotonDeBotones" disabled="disabled" onclick="AnadirBotones()"/>
+        </fieldset>
+        <br>
+            <div class="botonesPlantilla">
+                <input type="button" value="Generar HTML" onclick="GenerarCodigo()"/>
+                &nbsp;&nbsp;
+                <input type="button" value="Borrar Último" onclick="borrarDiv()"/>
+            </div>
+            <br>
+        </div> 
+
+        <div id="contenedorPrevisualizacion">
+            <h1 id="tituloPre">Preview</h1>
+            <div id="previsualizacion"></div>
+        </div>
+
+    </main>
+
+
+    <footer>        
+        <h4>Desarrollado con:</h4>
+        <div id="iconos">
+            <img id="html" src="css/assets/html.png"/>
+            <svg viewBox="0 0 128 128">
+                <path fill="#1572B6" d="M18.814 114.123l-10.054-112.771h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"></path>
+                <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z"></path>
+                <path fill="#fff" d="M64.001 51.429h18.302l1.264-14.163h-19.566v-13.831h34.681999999999995l-.332 3.711-3.4 38.114h-30.95v-13.831z"></path>
+                <path fill="#EBEBEB" d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031h-13.882l1.937 21.717 28.331 7.863.063-.018v-14.39z"></path>
+                <path fill="#fff" d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881h-13.876z"></path>
+                <path fill="#EBEBEB" d="M64.048 23.435v13.831000000000001h-33.407999999999994l-.277-3.108-.63-7.012-.331-3.711h34.646zM64.001 51.431v13.831000000000001h-15.209l-.277-3.108-.631-7.012-.33-3.711h16.447z"></path>
+            </svg>
+            <img id="javascript" src="css/assets/javascript.png"/>
+            <img id="sass" src="css/assets/sass.png"/>
+        </div>
+    </footer>
+    </article>
+</body>
+</html>
